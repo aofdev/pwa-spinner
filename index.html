@@ -12,7 +12,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="#FF8C00">
     <title>spinner</title>
-    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="/pwa-spinner/manifest.json">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://bootswatch.com/4/lumen/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
@@ -226,7 +226,7 @@
 <script>
      if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/sw.js').then(registration => {
+      navigator.serviceWorker.register('/pwa-spinner/sw.js').then(registration => {
         console.log('SW registered: ', registration);
       }).catch(registrationError => {
         console.log('SW registration failed: ', registrationError);
