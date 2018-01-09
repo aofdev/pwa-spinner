@@ -20,13 +20,18 @@ importScripts('workbox-sw.prod.v2.1.2.js');
 const fileManifest = [
   {
     "url": "index.html",
-    "revision": "052747d9f6b058a773a0e953af8d017d"
+    "revision": "b6cd9e4b402555cf67f7deb1f562b007"
+  },
+  {
+    "url": "manifest.json",
+    "revision": "c1e991e7a917498ca793e395d4efaef5"
   },
   {
     "url": "spinner.svg",
     "revision": "4dd33676727189314840e68676440ee1"
   }
 ];
+
 
 const workboxSW = new self.WorkboxSW();
 
@@ -67,6 +72,4 @@ workboxSW.router.registerRoute('https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2
 }));
 
 
-
 workboxSW.precache(fileManifest);
-
