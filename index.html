@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Chrome, Firefox OS, Opera and Vivaldi -->
+    <meta name="theme-color" content="#FF8C00">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#FF8C00">
+    <!-- iOS Safari -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#FF8C00">
+    <title>spinner</title>
+    <link rel="manifest" href="/manifest.json">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://bootswatch.com/4/lumen/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+    <script src="https://cdn.rawgit.com/alexgibson/shake.js/master/shake.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+        }
+        html, body {
+            height: 100%;
+        }
+        .wrapper {
+            min-height: 100%;
+            height: auto !important;
+            height: 100%;
+            margin: 0 auto -4em;
+        }
+        body{
+            background-color: #eeeeee;
+            font-family: 'Kanit', sans-serif;
+            text-align: center;
+        }
+
+        .card {
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        }
+
+        .card {
+            margin-top: 10px;
+            box-sizing: border-box;
+            border-radius: 2px;
+            background-clip: padding-box;
+        }
+
+        .card .card-image img {
+            border-radius: 2px 2px 0 0;
+            background-clip: padding-box;
+            position: relative;
+        }
+        .card .card-content {
+            padding: 16px;
+            border-radius: 0 0 2px 2px;
+            background-clip: padding-box;
+            box-sizing: border-box;
+        }
+        .card .card-content p {
+            margin: 0;
+            color: inherit;
+        }
+
+
+        @media screen and (max-width: 767px) {
+         
+            #show{
+                font-size: 30px;
+            }
+        }
+
+
+        @media (min-width: 768px) and (max-width: 991px) {
+        
+            #show{
+                font-size: 35px;
+            }
+        }
+
+
+        @media (min-width: 992px) and (max-width: 1199px) {
+       
+            #show{
+                font-size: 40px;
+            }
+        }
+
+        @media screen and (min-width: 1200px) {
+       
+            #show{
+                font-size: 45px;
+            }
+        }
+
+
+    </style>
+    <script type="text/javascript">
+        new WOW().init();
+        var looper;
+        var looper_stop = 0;
+        var degrees = 0;
+
+        function rand() {
+            var array = new Array(
+                'action 1',
+                'action 2',
+                'action 3',
+                'action 4',
+                'action 5',
+                'action 6'
+            );
+				
+            var elem = document.getElementById('img1');
+            if(navigator.userAgent.match("Chrome")){
+                elem.style.WebkitTransform = "rotate("+degrees+"deg)";
+            } else if(navigator.userAgent.match("Firefox")){
+                elem.style.MozTransform = "rotate("+degrees+"deg)";
+            } else if(navigator.userAgent.match("MSIE")){
+                elem.style.msTransform = "rotate("+degrees+"deg)";
+            } else if(navigator.userAgent.match("Opera")){
+                elem.style.OTransform = "rotate("+degrees+"deg)";
+            } else {
+                elem.style.transform = "rotate("+degrees+"deg)";
+            }
+
+            if(degrees == 0 && looper_stop == 0){
+                looper = setTimeout('rand()',2);
+            }
+            if(looper_stop == 10){
+                degrees = 0;
+                var show=array[Math.floor(Math.random() * array.length)];
+                $('#modal-content').modal({
+                    show: true
+                });
+					$('#play').prop("disabled", false);
+                document.getElementById('modal_show').innerHTML = show;
+                document.getElementById('show').innerHTML = show;
+                looper_stop = 0;
+                degrees = 0;
+            }
+            if(degrees > 0){
+                var show=array[Math.floor(Math.random() * array.length)];
+				$('#play').prop("disabled", true);
+                document.getElementById('show').innerHTML = show;
+                looper = setTimeout('rand()',2);
+            }
+            degrees = degrees+2+looper_stop;
+            if(degrees > 359){
+                degrees = 1;
+                looper_stop++;
+            }
+        }
+
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        window.onload = function() {
+
+
+            var myShakeEvent = new Shake({
+                threshold: 15
+            });
+
+            myShakeEvent.start();
+
+            window.addEventListener('shake', shakeEventDidOccur, false);
+
+            function shakeEventDidOccur () {
+
+                rand();
+       
+            }
+            $('#play_sub').click(function () {
+                rand();
+            });
+        };
+
+
+    </script>
+</head>
+<body>
+<div class="wrapper">
+<br>
+    <div class="container">
+        <div class="card">
+            <div class="card-content" style="background-color: #fafafa">
+                <center>
+				<img src="spinner.svg" id="img1" class="img-responsive"  width="100%" height="335px">
+               
+                </center>
+
+                <h2 style="color: #000000;word-break: break-all;" id="show">Play Now</h2>
+                <br><br>
+                <button id="play" class="btn btn-warning" onclick="rand();"><b style="color: white;font-size: 23px">Enter Now!!!</b></button>
+                <br><br><br><br>
+            </div>
+        </div>
+    </div>
+    <br>
+    </div>
+<div id="modal-content"  class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" style="border-bottom:none">
+             <h4 class="modal-title"> HIT!!!!</h4>
+            </div>
+            <div class="modal-body">
+                <h3 style="color:red" id="modal_show"></h3>
+            </div>
+            <div class="modal-footer" style="border-top: none">
+                <button type="button" class="btn btn-default" data-dismiss="modal">close</button>
+                <button id="play_sub" type="button"  class="btn btn-primary" data-dismiss="modal">play again</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script>
+     if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js').then(registration => {
+        console.log('SW registered: ', registration);
+      }).catch(registrationError => {
+        console.log('SW registration failed: ', registrationError);
+      });
+    });
+  }
+</script>
+</body>
+</html>

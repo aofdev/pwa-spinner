@@ -1,0 +1,20 @@
+{
+  "name": "pwa-spinner",
+  "version": "1.0.0",
+  "description": "A PWAs.. Spinner",
+  "scripts": {
+    "start": "http-server -c-1"
+  },
+  "keywords": [
+    "pwa",
+    "progressive",
+    "web",
+    "app",
+    "spinner"
+  ],
+  "author": "Visarut Phusua",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^0.10.0"
+  }
+}
