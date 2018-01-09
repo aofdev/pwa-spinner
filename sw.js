@@ -19,43 +19,43 @@ importScripts('workbox-sw.prod.v2.1.2.js');
  */
 const fileManifest = [
   {
-    "url": "pwa-spinner/images/icons/app-icon-144x144.png",
+    "url": "images/icons/app-icon-144x144.png",
     "revision": "f33547ee2405740a8da4b2bc07ea30dd"
   },
   {
-    "url": "pwa-spinner/images/icons/app-icon-192x192.png",
+    "url": "images/icons/app-icon-192x192.png",
     "revision": "808d223c1629b792ad723accaf38f5ef"
   },
   {
-    "url": "pwa-spinner/images/icons/app-icon-384x384.png",
+    "url": "images/icons/app-icon-384x384.png",
     "revision": "965d75a7f8c76d8d82e0a296ee085acc"
   },
   {
-    "url": "pwa-spinner/images/icons/app-icon-48x48.png",
+    "url": "images/icons/app-icon-48x48.png",
     "revision": "175e69eef74a620df1d9e9febd2f7251"
   },
   {
-    "url": "pwa-spinner/images/icons/app-icon-512x512.png",
+    "url": "images/icons/app-icon-512x512.png",
     "revision": "31ef760a149649764345131ea55d4b2f"
   },
   {
-    "url": "pwa-spinner/images/icons/app-icon-96x96.png",
+    "url": "images/icons/app-icon-96x96.png",
     "revision": "0a6fb135a15cd743e3d3fd8e3845e4da"
   },
   {
-    "url": "pwa-spinner/images/icons/apple-touch-icon.png",
+    "url": "images/icons/apple-touch-icon.png",
     "revision": "62e45574e7cad3d70a5b42bddc837f1d"
   },
   {
-    "url": "pwa-spinner/images/icons/favicon-16x16.png",
+    "url": "images/icons/favicon-16x16.png",
     "revision": "4d49fd42ef9f428281d6fed26415f2fd"
   },
   {
-    "url": "pwa-spinner/images/icons/favicon.ico",
+    "url": "images/icons/favicon.ico",
     "revision": "1a520e5f9efbaaa0c7cecfff4e3e69dc"
   },
   {
-    "url": "pwa-spinner/images/icons/safari-pinned-tab.svg",
+    "url": "images/icons/safari-pinned-tab.svg",
     "revision": "cba4fffe27faa23b3aa4655b6f9ff298"
   },
   {
