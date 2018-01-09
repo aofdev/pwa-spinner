@@ -11,8 +11,8 @@
     <!-- iOS Safari -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="#000">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/icons/app-icon-48x48.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="pwa-spinner/images/icons/app-icon-48x48.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="pwa-spinner/images/icons/favicon-16x16.png">
 
     <meta name="theme-color" content="#000">
 
@@ -21,12 +21,12 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <meta name="apple-mobile-web-app-title" content="spinner">
-    <link rel="apple-touch-icon" href="images/icons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" href="pwa-spinner/images/icons/apple-touch-icon.png">
     <!-- Add to home screen for Windows -->
-    <meta name="msapplication-TileImage" content="images/icons/app-icon-144x144.png">
+    <meta name="msapplication-TileImage" content="pwa-spinner/images/icons/app-icon-144x144.png">
     <meta name="msapplication-TileColor" content="#000000">
     <title>spinner</title>
-    <link rel="manifest" href="/manifest.json">
+    <link rel="manifest" href="pwa-spinner/manifest.json">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://bootswatch.com/4/lumen/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
@@ -240,7 +240,7 @@
 <script>
      if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/sw.js').then(registration => {
+      navigator.serviceWorker.register('/pwa-spinner/sw.js').then(registration => {
         console.log('SW registered: ', registration);
       }).catch(registrationError => {
         console.log('SW registration failed: ', registrationError);
